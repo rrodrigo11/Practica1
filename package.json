@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "npm build && http-server ./dist",
+    "start": "npm run build && http-server ./dist",
+    "scripts": "tsc",
+    "build": "gulp"
   },
   "keywords": [
     "compilers"
@@ -16,8 +18,13 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^4.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-webserver": "^0.9.1",
     "http-server": "^0.12.3",
     "sass": "^1.32.7",
     "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.6",
+    "newsapi": "^2.4.1"
   }
 }

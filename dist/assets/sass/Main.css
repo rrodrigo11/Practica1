@@ -1,0 +1,14 @@
+@media only screen and (max-width: 700px) {
+  .grid {
+    flex-direction: column; } }
+
+html, body {
+  margin: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  display: flex;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  background-color: khaki; }

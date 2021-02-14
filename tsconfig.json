@@ -1,7 +1,7 @@
 {
     "include": ["src/**/*.ts"],
     "compilerOptions": {
-        "outDir": "dist/assets/scripts",
+        "outDir": "dist/assets/styles",
         "target": "ES6"
         }
 }
