@@ -1,19 +1,23 @@
-let el_boton = document.getElementById("btn_search");
-let caja_texto = document.getElementById("caja_texto");
-let el_main = document.getElementById("main");
+"use script";
+var btn = document.getElementById("btn_search");
+var txt = document.getElementById("caja_texto");
+var grid = document.getElementById('grid');
 const templateSource = document.getElementById('grid').innerHTML;
 const template = Handlebars.compile(templateSource);
-el_boton.addEventListener('click', function () {
-    let keyword = caja_texto.value;
-    console.log("olamund");
-    var url = 'http://newsapi.org/v2/everything?' +
-        `q=${keyword}&` +
-        'from=2021-02-14&' +
-        'sortBy=popularity&' +
-        'apiKey=0d727f25d6c14c6db8f401844e5315e5';
+btn.addEventListener('click', () => {
+    var tmp = document.getElementById("caja_texto").value;
+    var url = `https://newsapi.org/v2/everything?q=${tmp}&apiKey=0d727f25d6c14c6db8f401844e5315e5`;
     var req = new Request(url);
     fetch(req)
         .then(function (response) {
-        console.log(response.json());
+        return response.json();
+    }).then((data) => {
+        console.log(data);
+        document.getElementById('grid').innerHTML = template({
+            news: data.articles
+        });
+    }).catch((err) => {
+        console.log(err);
     });
-}, false);
+    grid.style.display = "flex";
+});

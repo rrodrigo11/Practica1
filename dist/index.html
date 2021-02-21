@@ -6,15 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Top News from the Internet</title>
     <link rel="stylesheet" href="/assets/sass/Main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 </head>
 <body>
+    
     <h1>Rayas & ITESO Internet News</h1>
-    <div>
+    <div class="header">
         <input type="text" class="form-control" id="caja_texto" aria-describedby="helpId" placeholder="Búsqueda">
-        <button name="" id="btn_search" class="btn btn-primary" href="#" role="button"></button>
+        <button id="btn_search" class="btn btn-primary"></button>
     </div>
-        
-    </div>
-    <scripts src="/assets/scripts/Main.js"></scripts>
+
+    <section id="grid" class="grid" style="display: none;">
+        {{#each news}}
+            <div class="news-item">
+                <img src="{{urlToImage}}" class='image' />
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                <a href="{{url}}" target="_blank">Ver más</a>
+            </div>
+        {{/each}}
+    </section>   
+
+    <!-- <script src="/assets/scripts/Main.js"></script> -->
+    <script src="./assets/scripts/main.js"></script>
 </body>
 </html>
