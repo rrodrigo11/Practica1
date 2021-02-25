@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && http-server ./dist",
+    "start": "npm run build",
     "scripts": "tsc",
     "build": "gulp"
   },
@@ -15,7 +15,9 @@
   "author": "RRS",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^14.14.31",
     "gulp": "^4.0.2",
+    "gulp-express": "^0.3.5",
     "gulp-sass": "^4.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-webserver": "^0.9.1",
@@ -24,7 +26,10 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "handlebars": "^4.7.6",
-    "newsapi": "^2.4.1"
+    "hbs": "^4.1.1",
+    "newsapi": "^2.4.1",
+    "node-fetch": "^2.6.1"
   }
 }

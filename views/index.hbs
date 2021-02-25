@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Top News from the Internet</title>
+    <link rel="stylesheet" href="/assets/sass/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+</head>
+<body>
+    
+    <h1>Rayas & ITESO Internet News</h1>
+    <form action="" method="GET">
+        <input type="text" name="searching" id="caja_texto" placeholder="Búsqueda">
+        <button>ENVIAR BÚSQUEDA</button>
+    </form>       
+        
+
+    <section id="grid" class="grid" style="display: none;">
+        {{#each news}}
+            <div class="news-item">
+                <img src="{{urlToImage}}" class='image' />
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                <a href="{{url}}" target="_blank">Ver más</a>
+            </div>
+        {{/each}}
+    </section>   
+
+    <!-- <script src="/assets/scripts/Main.js"></script> -->
+    <script src="/assets/scripts/main.js"></script>
+</body>
+</html>

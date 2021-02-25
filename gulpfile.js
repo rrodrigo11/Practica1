@@ -5,12 +5,12 @@ let webserver = require('gulp-webserver');
 
 
 gulp.task('html',function(){
-    return gulp.src('src/index.html')
-    .pipe(gulp.dest('dist'));
+    return gulp.src('views/index.html')
+    .pipe(gulp.dest('public'));
 });
 
 gulp.task('watch:html', gulp.series('html', function (done) {
-    gulp.watch('src/**/*.html', gulp.series('html'));
+    gulp.watch('views/**/*.html', gulp.series('html'));
     done();
 }));
 
@@ -18,27 +18,27 @@ gulp.task('scripts',function(){
     tsConfig = typescript.createProject('tsconfig.json');
     return tsConfig.src()
     .pipe(tsConfig())
-    .pipe(gulp.dest('dist/assets/scripts'));
+    .pipe(gulp.dest('public/scripts'));
 });
 
 gulp.task('watch:scripts', gulp.series('scripts', function (done) {
-    gulp.watch('src/**/*.js', gulp.series('scripts'));
+    gulp.watch('views/**/*.js', gulp.series('scripts'));
     done();
 }));
 
 gulp.task('styles',function(){ //ejemplo de rutina para creacion de archivo css a traves de la herrramienta de gulp-sass
-    return gulp.src('src/**/*.scss')
+    return gulp.src('views/**/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('dist/assets/'));
+    .pipe(gulp.dest('public/'));
 });
 
 gulp.task('watch:styles', gulp.series('styles', function (done) {
-    gulp.watch('src/**/*.scss', gulp.series('styles'));
+    gulp.watch('views/**/*.scss', gulp.series('styles'));
     done();
 }));
 
 gulp.task('serve', function () {
-    return gulp.src('dist')
+    return gulp.src('public')
         .pipe(webserver({
             open: true,
             livereload: true
