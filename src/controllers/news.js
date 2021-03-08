@@ -1,7 +1,7 @@
-const path = require('path');
 const NewsAPI = require('newsapi');
-const { response } = require('express');
-const API_KEY = "0d727f25d6c14c6db8f401844e5315e5";
+const dotenv = require('dotenv');
+dotenv.config();
+const API_KEY = process.env.API_KEY;
 const newsapi = new NewsAPI(API_KEY);
 
 exports.renderaichon = (req, res)=>{

@@ -4,7 +4,7 @@ const router = express.Router();
 const fetch = require ('node-fetch');
 const path = require('path');//herramienta para dar solución a problemas de compatibilidad de rutas de archivos
 
-const newscontroller = require('./controllers/news');
+const newscontroller = require('../controllers/news');
 
 router.get("/", newscontroller.renderaichon );
 router.post("/", newscontroller.getNews );

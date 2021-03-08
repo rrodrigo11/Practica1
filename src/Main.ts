@@ -2,7 +2,7 @@
 var btn = document.getElementById("btn_search");
 var txt = document.getElementById("caja_texto");
 var grid = document.getElementById('grid');
-declare var Handlebars:any; //solución temporal a la falta de libreria Handlebars
+//declare var Handlebars:any; //solución temporal a la falta de libreria Handlebars
 const templateSource = document.getElementById('grid').innerHTML;
 const template = Handlebars.compile(templateSource);
 

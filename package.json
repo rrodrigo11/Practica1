@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build",
+    "start": "node .",
+    "dev": "nodemon . ",
     "scripts": "tsc",
     "build": "gulp"
   },
@@ -26,9 +27,11 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "handlebars": "^4.7.6",
     "hbs": "^4.1.1",
+    "mongodb": "^3.6.4",
     "newsapi": "^2.4.1",
     "node-fetch": "^2.6.1"
   }
