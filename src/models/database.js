@@ -23,9 +23,9 @@ class Database{
             console.log('Connected to MongoDB');
             
         });
-        setTimeout(()=>{
-            console.log("database connection timeout", db);
-        },2000);    
+        // setTimeout(()=>{
+        //    console.log("database connection timeout", db);
+        // },2000);    
     }
 
     useCollection(name){
