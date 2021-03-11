@@ -6,8 +6,10 @@ const usersController = require('../controllers/users');
 
 router.get('/', usersController.getAll );
 
+router.get("/create", usersController.renderUser);
+
 // router.get('/:email', usersController.getbyEmail )
 
-router.post('/', usersController.insertUser);
+router.post('/',usersController.uploadPhoto , usersController.insertUser);
 
 module.exports= router;

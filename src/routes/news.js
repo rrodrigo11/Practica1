@@ -7,7 +7,7 @@ const path = require('path');//herramienta para dar solución a problemas de com
 const newscontroller = require('../controllers/news');
 
 router.get("/", newscontroller.renderaichon );
-router.post("/", newscontroller.getNews );
+router.post("/",newscontroller.getNews );
 module.exports = router;
 
 // router.get('/', (req,res,next)=>{
